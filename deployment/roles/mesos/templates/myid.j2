@@ -1,0 +1,11 @@
+{% for server in zookeeper_servers %}
+{% if server.name is defined %}
+{% if server.name == inventory_hostname %}
+{{ server.id }}
+{% endif %}
+{% else %}
+{% if server == inventory_hostname %}
+{{ loop.index }}
+{% endif %}
+{% endif %}
+{% endfor %}

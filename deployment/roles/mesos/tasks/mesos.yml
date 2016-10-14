@@ -33,10 +33,20 @@
     tags:
       - mesos
 
+  - name: Mesos | Config Zookeeper [myid]
+    template: src="myid.j2" dest="/etc/zookeeper/conf/myid"
+    notify: restart zookeeper
+    tags:
+      - mesos
+
+  - name: Mesos | Config Zookeeper [zoo.cfg]
+    template: src="zoo.cfg.j2" dest="/etc/zookeeper/conf/zoo.cfg"
+    notify: restart zookeeper
+    tags:
+      - mesos
+
   - name: Mesos | Config Zookeeper
-    template:
-      src: "zk.j2"
-      dest: "/etc/mesos/zk"
+    template:  src="zk.j2" dest="/etc/mesos/zk"
     notify: restart zookeeper
     tags:
       - mesos

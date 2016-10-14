@@ -5,12 +5,12 @@
       - basic
 
   - name: Basics | Upgrade apt
-    apt: upgrade=full
+    apt: upgrade=full force=yes
     tags:
       - basic
 
   - name: Basics | General dist-upgrade
-    apt: upgrade=dist
+    apt: upgrade=dist force=yes
     tags:
       - basic
 
